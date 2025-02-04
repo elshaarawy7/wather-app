@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wather_app/widgets/MyBatton.dart';
+import 'package:wather_app/widgets/text_field.dart';
 
 class SingIn extends StatelessWidget {
   const SingIn({super.key});
@@ -41,20 +42,15 @@ class SingIn extends StatelessWidget {
               const SizedBox(height: 20),
               const Divider(thickness: 1),
               const SizedBox(height: 10),
-              const  TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email address',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 10),
-              const TextField(
+              const Text_From_Fiel(
+                obscureText: false,
+                 hintext: "Email addres",
+                 ), 
+              const   SizedBox(height: 10,),
+                 const Text_From_Fiel(
                 obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
-                ),
-              ),
+                 hintext: "Password",
+                 ),
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {},
@@ -69,7 +65,9 @@ class SingIn extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {},
-                child: const Text('Continue'),
+                child: const Text('Continue' , style: TextStyle(
+                  color: Colors.white
+                ),),
               ),
               const SizedBox(height: 20),
             ],
