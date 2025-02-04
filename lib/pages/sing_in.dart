@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wather_app/widgets/MyBatton.dart';
 
 class SingIn extends StatelessWidget {
   const SingIn({super.key});
@@ -12,51 +13,35 @@ class SingIn extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(16),
           width: 350,
-          child: Column(
+          child:  Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Icon(Icons.water_drop_sharp , size: 50,  color: Colors.blue,),
-              const SizedBox(height: 20),
-              const Text(
+              SizedBox(height: 20),
+               Text(
                 'Sign in to your account',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 20),
-              ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  side: const BorderSide(color: Colors.black12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+               SizedBox(height: 20),
+              
+              MyButton(
+                label: "Sign in with Google", 
+                icon: Icons.g_mobiledata,
+                ),  
+
+                SizedBox(height: 10,),
+
+                MyButton(
+                label: "Sign in with Apple", 
+                icon: Icons.apple,
                 ),
-                onPressed: () {},
-                icon: const Icon(Icons.g_mobiledata),
-                label: const Text('Sign in with Google'),
-              ),
-              const SizedBox(height: 10),
-              ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  side: const BorderSide(color: Colors.black12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                onPressed: () {},
-                icon: const Icon(Icons.apple),
-                label: const Text('Sign in with Apple'),
-              ),
+              
               const SizedBox(height: 20),
               const Divider(thickness: 1),
               const SizedBox(height: 10),
-              const TextField(
+               TextField(
                 decoration: InputDecoration(
                   labelText: 'Email address',
                   border: OutlineInputBorder(),
