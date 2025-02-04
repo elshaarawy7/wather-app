@@ -17,23 +17,23 @@ class SingIn extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Icon(Icons.water_drop_sharp , size: 50,  color: Colors.blue,),
-              SizedBox(height: 20),
-               Text(
+            const  Icon(Icons.water_drop_sharp , size: 50,  color: Colors.blue,),
+            const  SizedBox(height: 20),
+            const   Text(
                 'Sign in to your account',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-               SizedBox(height: 20),
+             const  SizedBox(height: 20),
               
-              MyButton(
+            const  MyButton(
                 label: "Sign in with Google", 
                 icon: Icons.g_mobiledata,
                 ),  
 
-                SizedBox(height: 10,),
+              const  SizedBox(height: 10,),
 
-                MyButton(
+              const  MyButton(
                 label: "Sign in with Apple", 
                 icon: Icons.apple,
                 ),
@@ -41,7 +41,7 @@ class SingIn extends StatelessWidget {
               const SizedBox(height: 20),
               const Divider(thickness: 1),
               const SizedBox(height: 10),
-               TextField(
+              const  TextField(
                 decoration: InputDecoration(
                   labelText: 'Email address',
                   border: OutlineInputBorder(),
