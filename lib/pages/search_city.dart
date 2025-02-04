@@ -6,9 +6,15 @@ class SearchCity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
-      
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: const Text("Search for your city" , style: TextStyle(
+          color: Colors.white , 
+          fontSize: 20 ,
+          fontWeight: FontWeight.bold
+        ), ),
+        centerTitle: true,
+      ),
     );
   }
 }
