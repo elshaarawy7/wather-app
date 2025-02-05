@@ -1,5 +1,10 @@
+import 'dart:math';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:wather_app/widgets/text_field.dart';
+import 'package:wather_app/model/wather_Modal.dart';
+import 'package:wather_app/pages/wather_page_ui.dart';
+import 'package:wather_app/services/wather_Servcies.dart';
 
 class SearchCity extends StatelessWidget {
   const SearchCity({super.key});
@@ -7,6 +12,7 @@ class SearchCity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text("Search for your city" , style: TextStyle(
@@ -23,15 +29,27 @@ class SearchCity extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             const Text_From_Fiel(
-                obscureText: false, 
-                hintext:" Search for your city " , 
-                ), 
+              TextField(
+                onSubmitted: (value) async {
+                  WatherModal watherModal = await
+                  WatherServcies(Dio()).getCurrntWather(CityName: value);
+                  log(WatherModal.cityName);
+                }, 
+                decoration:const InputDecoration(
+                  hintText:" search for your city " ,
+                  border: OutlineInputBorder(),
+                ),
+                
+              ), 
 
               const  SizedBox(height: 20,),
 
                  MaterialButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return WeatherAppUI();
+                    }));
+                  },
                   height: 75,
                   minWidth: 200 ,
                   color: Colors.blue,
